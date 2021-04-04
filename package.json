@@ -1,0 +1,31 @@
+{
+  "name": "einstein_bot",
+  "version": "1.0.0",
+  "description": "bot putasso pra uatizap",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perseu912/einstein_bot.git"
+  },
+  "keywords": [
+    "bot",
+    "winstein",
+    "whatzapp"
+  ],
+  "author": "Reinan Bezerra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/perseu912/einstein_bot/issues"
+  },
+  "homepage": "https://github.com/perseu912/einstein_bot#readme",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "puppeteer": "*",
+    "puppeteer-core": "^8.0.0",
+    "sulla": "^2.4.0",
+    "venom-bot": "^3.0.13"
+  }
+}
