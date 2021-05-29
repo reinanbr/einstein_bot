@@ -8,13 +8,16 @@ venom.create().then((client) => start(client));
 
 function start(client){
     client.onMessage((message) => {
-        if(message.body === 'oi'){
+        if(message.body){
 
         	console.log('mensagem ');
         	console.log(message);
         	console.log('cliente ');
-        	console.log(client);
-            client.sendText(message.from,'oi seu corno, kkk')
+        	//console.log(client);
+        	let group = message.isGroupMsg ? 'hmm, estuo em um grupo' : '';
+        	console.log(`mensagem: ${message.content} 
+        	de ${message.from} [${message.sender.pushname}] para ${message.to}`)
+            client.sendText(message.from,`@${message.sender.pushname} : oi seu corno, kkk, ${group}`);
         }
     })
 }

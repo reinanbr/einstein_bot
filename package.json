@@ -23,6 +23,7 @@
   "homepage": "https://github.com/perseu912/einstein_bot#readme",
   "dependencies": {
     "fetch": "^1.1.0",
+    "nodemon": "^2.0.7",
     "puppeteer": "*",
     "puppeteer-core": "^8.0.0",
     "sulla": "^2.4.0",
