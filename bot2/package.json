@@ -1,0 +1,15 @@
+{
+  "name": "bot2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "inde.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "^3.5.1",
+    "typescript": "^4.3.5"
+  }
+}
