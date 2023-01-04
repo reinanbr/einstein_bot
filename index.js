@@ -1,55 +1,80 @@
-
-
 const venom = require('venom-bot');
 const fetch = require('fetch');
-const music_dl = require('./music_dl')
+const music_dl = require('./tools/music_dl')
+const Commands = require('./commands')
 
 
 const gm = music_dl.get_music_yt
 
-//vhgkltgvloyrtfgvbb v m,bhbm m.bmn                              
-venom.create().then((client) => start(client));
+venom.create({session:'Lilith',multidevice:true}).then((client) => start(client));
 
 function start(client){
     client.onMessage((message) => {
-      //  if(message.body === 'oi'){
+
 			console.log('mensagem ');
+
+			console.log(message)
 			args = message.body
+
 			console.log(args)
 			args.toLowerCase()
 			args = args.split(' ') 
+
 			console.log(args)
 			command = args[0]
+			console.log(command)
 
-        	
-        	//console.log(message);
         	console.log('cliente ');
-        	//console.log(client);
         	let group = message.isGroupMsg ? 'hmm, estuo em um grupo' : '';
-        	console.log(`mensagem: ${message.content} 
-        	de ${message.from} [${message.sender.pushname}] para ${message.to}`)
 
+			console.log(`mensagem: ${message.content} de ${message.from} [${message.sender.pushname}] para ${message.to}`)
+
+
+			// COMMANDS //
+
+			//send music
 			if(command === '/music')
 			{
-				music = args.slice(1,args.length)
-				music = music.join(' ')
-            	client.sendText(message.from,`@${message.sender.pushname} requiriu a musica ${music}`);
-
-				calli = async (name_music_path)=>{
-					console.log(`oh, eu toh funcionando... ${name_music_path}`)
-					await client.sendVoice(message.from,name_music_path,name_music_path)
-					.then((result) => {
-						console.log('enviando una musica')
-						console.log('Result: ', result); //return object success
-					  })
-					  .catch((erro) => {
-						console.error('Error when sending: ', erro); //return object error
-					  });
-					}
-
-				gm(music,calli)
-				
+				Commands.send_music(args,client)
 			}
 			
-		})
-	}
+
+			//send hour's
+			if(command=='/horario'){
+				console.log('comando horário')
+				Commands.sendHorary(client,message).then((res) =>{
+					console.log('funfei')
+				}).catch((res)=>{
+					console.log('num funfei')
+					console.log(res)
+				})
+			}
+
+			if(command=='/ppc'){
+				Commands.sendPPC(client,message).then((res) =>{
+					console.log('funfei')
+				}).catch((res)=>{
+					console.log('num funfei')
+					console.log(res)
+				})
+			}
+
+			if(command=='/options'){
+				Commands.sendOptions(client,message).then((res)=>{
+						console.log('funfei')
+					}).catch((res)=>{
+						console.log('num funfei')
+						console.log(res)
+					})
+			}
+
+
+
+
+			//send PPC
+
+
+
+
+	})
+}

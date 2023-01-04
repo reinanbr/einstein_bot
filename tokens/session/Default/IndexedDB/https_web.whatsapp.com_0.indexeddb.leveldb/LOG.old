@@ -1,0 +1,6 @@
+2021/12/21-18:03:27.539 de3 Reusing MANIFEST /home/reynan/Desktop/Bot/einstein_bot/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2021/12/21-18:03:27.539 de3 Recovering log #11
+2021/12/21-18:03:27.845 de3 Reusing old log /home/reynan/Desktop/Bot/einstein_bot/tokens/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000011.log 
+2021/12/21-20:38:16.934 112c Level-0 table #16: started
+2021/12/21-20:38:17.037 112c Level-0 table #16: 1324029 bytes OK
+2021/12/21-20:38:17.048 112c Delete type=0 #11
